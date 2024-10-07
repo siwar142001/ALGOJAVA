@@ -1,9 +1,19 @@
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
 
+/**
+ * Cette classe contient plusieurs méthodes de manipulation d'un tableau d'entiers.
+ */
+public class Main {
+    // Tableau de scores statique
     static int [] Siwar_the_best = new int [7];
 
+    /**
+     * Affiche le contenu d'un tableau d'entiers.
+     *
+     * @param tableau Le tableau d'entiers à afficher.
+     */
 
     public static void affiche_tab(int [] tableau){
         for (int i = 0; i < tableau.length ; i++) {
@@ -13,6 +23,11 @@ public class Main {
 
 
 
+    /**
+     * Trouve et affiche la valeur maximale dans un tableau d'entiers.
+     *
+     * @param tableau Le tableau d'entiers dans lequel trouver la valeur maximale.
+     */
 
     public static void max_tab(int [] tableau){
         int max = tableau[0];
@@ -25,7 +40,12 @@ public class Main {
     };
 
 
-
+    /**
+     * Vérifie si un tableau contient au moins une valeur inférieure à 10.
+     *
+     * @param tableau Le tableau d'entiers à vérifier.
+     * @return true si le tableau contient au moins une valeur inférieure à 10, sinon false.
+     */
     public static boolean moins10 (int [] tableau) {
         for (int j : tableau) {
             if (j < 10) {
