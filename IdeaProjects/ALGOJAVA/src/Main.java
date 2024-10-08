@@ -11,7 +11,45 @@ public class Main {
 
     /**
      * Affiche le contenu d'un tableau d'entiers.
-     *
+     * ne retourne rien car c une fonction void
+     * @param tableau Le tableau d'entiers à afficher.
+     */
+
+    public static int recherche(int [] tableau , int n){
+        int min = 0;
+        int max = tableau.length-1;
+
+        while (min <= max) {
+            // Calcul de l'index du milieu
+            int milieu = (min + max) / 2;
+
+            // Si l'élément du milieu est égal à n, on renvoie son index
+            if (tableau[milieu] == n) {
+                return milieu;
+            }
+
+            // Si l'élément du milieu est plus grand que n, on cherche dans la partie gauche
+            if (tableau[milieu] > n) {
+                max = milieu - 1;
+            }
+            // Si l'élément du milieu est plus petit que n, on cherche dans la partie droite
+            else {
+                min = milieu + 1;
+            }
+        }
+
+        // Si l'élément n'a pas été trouvé, on renvoie -1
+        return -1;
+    }
+
+
+
+
+
+
+    /**
+     * Affiche le contenu d'un tableau d'entiers.
+     * ne retourne rien car c une fonction void
      * @param tableau Le tableau d'entiers à afficher.
      */
 
@@ -19,7 +57,7 @@ public class Main {
         for (int i = 0; i < tableau.length ; i++) {
             System.out.println("i = " + tableau[i]);
         }
-    };
+    }
 
 
 
@@ -58,6 +96,7 @@ public class Main {
 
 
 
+
     public static void main(String[] args) {
         Siwar_the_best[0]=5;
         Siwar_the_best[1]=15;
@@ -69,6 +108,8 @@ public class Main {
         System.out.println("Hello and welcome!");
         affiche_tab(Siwar_the_best);
         max_tab(Siwar_the_best);
+        int index = recherche(Siwar_the_best,10);
+        System.out.println(index);
         boolean f3 = moins10(Siwar_the_best);
         System.out.println(f3);
     }
